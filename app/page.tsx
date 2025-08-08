@@ -125,7 +125,7 @@ function MainContent() {
               globally!
             </h1>
             <p className="text-secondary py-5 text-sm sm:text-base text-center md:text-left">
-              I'm here to help entrepreneurs like you boost sales and attract
+              I&apos;m here to help entrepreneurs like you boost sales and attract
               more clients through your website. You can focus on growing your
               business while leaving the technical side to an expert like me.
             </p>
