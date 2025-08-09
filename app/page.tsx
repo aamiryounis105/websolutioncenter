@@ -7,11 +7,11 @@ import Link from "next/link";
 import MainLayout from "@/components/MainLayout";
 
 const teamMembers = [
-  {img: "/Portfolio-1.png" },
-  {img: "/Portfolio-2.jpg" },
-  {img: "/Portfolio-3.jpg" },
-  {img: "/Portfolio-4.jpg" },
-  {img: "/Portfolio-5.jpg" },
+  { img: "/portfolio1.jpg" },
+  { img: "/portfolio2.jpg" },
+  { img: "/portfolio3.jpg" },
+  { img: "/portfolio4.jpg" },
+  { img: "/portfolio5.jpg" },
 ];
 
 const topText = " Custom Websites • WordPress Web Development • SEO Strategy • Web Branding •";
@@ -97,7 +97,6 @@ function MainContent() {
         >
           <img
             src={person.img}
-            alt={person.name}
             className="w-full h-40 sm:h-44 md:h-52 lg:h-60 object-cover rounded-[10px]"
           />
         </div>
@@ -159,7 +158,7 @@ export default function Page() {
   return (
     <MainLayout
       hero={<Hero />}
-      bgClass="bg-[url('/hero_background.jpg')] bg-cover bg-center"
+      bgClass="bg-[url('/herobackground.jpg')] bg-cover bg-center"
     >
       <MainContent />
     </MainLayout>
