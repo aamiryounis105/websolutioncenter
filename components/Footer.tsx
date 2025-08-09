@@ -4,11 +4,11 @@ import { ArrowUpRight } from "lucide-react";
 export default function Footer() {
   return (
     <footer className="mx-auto bg-primary text-secondary py-10 mt-60">
-      <section className="w-3/4 bg-secondary flex flex-column mx-auto rounded-[80px] px-16 py-5 gap-44 mt-[-200]">
-        <div className="flex justify-center items-center">
+      <section className="w-3/4 sm:w-3/4 bg-secondary flex flex-col md:flex-row mx-auto rounded-[40px] sm:rounded-[40px] px-6 sm:px-16 py-5 gap-6 sm:gap-6 mt-[-200px]">
+        <div className="flex justify-center items-center text-center sm:text-start">
           <div>
             <p className="text-primary text-lg">Contact us</p>
-            <h1 className="text-primary text-4xl pt-4">
+            <h1 className="text-primary text-3xl pt-4 sm:text-4xl">
               Let us create spaces that inspire and elevate your brand!
             </h1>
           </div>
@@ -49,7 +49,7 @@ export default function Footer() {
               href="/contact"
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             >
-              <div className="flex items-center justify-center w-44 h-44 rounded-full bg-primary text-secondary hover:scale-105 transition-transform duration-300">
+              <div className="flex items-center justify-center w-44 h-44 rounded-full bg-primary text-secondary hover:scale-105 transition-transform duration-300 hover:rotate-45">
                 <ArrowUpRight className="w-20 h-20" />
               </div>
             </a>
@@ -57,12 +57,12 @@ export default function Footer() {
         </div>
       </section>
       <section className="flex flex-col justify-center items-center">
-        <div className="text-[200px] mt-9">
+        <div className="text-[100px] mt-9 sm:text-[200px] text-center">
           <h1>SAY HELLO!</h1>
         </div>
         <div>
           <a href="mailto:aamiryounis105@gmail.com" className="hover:underline">
-            <h1 className="text-5xl">aamiryounis105@gmail.com</h1>
+            <h1 className="text-3xl sm:text-5xl">aamiryounis105@gmail.com</h1>
           </a>
         </div>
         <div className="my-10">
@@ -70,8 +70,8 @@ export default function Footer() {
             href="https://wa.me/923098382976"
             className="flex items-center gap-5 hover:underline"
           >
-            <FaWhatsapp className="w-14 h-14" />
-            <h1 className="text-5xl">+92 309 8382976</h1>
+            <FaWhatsapp className="w-10 h-10 sm:w-14 sm:h-14" />
+            <h1 className="text-3xl sm:text-5xl">+92 309 8382976</h1>
           </a>
         </div>
         <div className="text-sm mt-9">
