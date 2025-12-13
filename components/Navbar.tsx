@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Moon, Sun } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 export default function Navbar() {
