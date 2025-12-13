@@ -1,7 +1,7 @@
 "use client";
 
 import MainLayout from "@/components/MainLayout";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
 
 function Hero() {
   return (
@@ -16,7 +16,7 @@ function Hero() {
 function Contact() {
   const [status, setStatus] = useState("");
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const form = e.currentTarget;
     const data = {
