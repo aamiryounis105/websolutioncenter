@@ -42,7 +42,7 @@ function Hero() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <p className="text-lg md:text-xl leading-relaxed mb-6">
-            Hi, I’m <span className="text-secondary font-semibold">Aamir R.</span> —
+            Hi, Im <span className="text-secondary font-semibold">Aamir R.</span> —
             an Email Signature Designer with over 4 years of experience, having
             completed more than 300 projects. I specialize in HTML-based,
             clickable, mobile-responsive signatures that work seamlessly across
@@ -92,8 +92,10 @@ export default function Page() {
   return (
     <MainLayout
       hero={<Hero />}
-      bgClass="bg-gradient-to-b from-gray-900 to-black"
+      bgClass="bg-primary"
     >
+      {/* If no extra content, you can just pass an empty fragment */}
+      <></>
     </MainLayout>
   );
 }

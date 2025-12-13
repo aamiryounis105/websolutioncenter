@@ -87,7 +87,7 @@ export default function Navbar() {
             className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
           >
             <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-bold">
-              Let's Meet
+              Let&apos;s Meet
             </h1>
             <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
               <ArrowUpRight className="w-4 h-4 text-primary" />
@@ -152,7 +152,7 @@ export default function Navbar() {
               className="inline-flex items-center justify-between bg-secondary text-accent rounded-full px-6 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
             >
               <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-bold">
-                Let's Meet
+                Let&apos;s Meet
               </h1>
               <span className="bg-primary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight className="w-4 h-4 text-secondary" />
