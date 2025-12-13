@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --font-heading: 'Anton', sans-serif;
+  --font-heading: 'Raleway', sans-serif;
   --font-body: 'Archivo', sans-serif;
 
   --background: #ffffff;

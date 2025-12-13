@@ -1,12 +1,12 @@
 // app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
-import { Anton, Archivo } from "next/font/google";
+import { Raleway, Archivo } from "next/font/google";
 
-const anton = Anton({
+const raleway = Raleway({
   subsets: ["latin"],
-  weight: "400",
-  variable: "--font-anton",
+  weight: ["400", "500", "600", "700" , "800", "900"],
+  variable: "--font-raleway",
 });
 
 const archivo = Archivo({
@@ -26,11 +26,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${anton.variable} ${archivo.variable}`}>
-      <body
-        className="bg-background text-foreground font-body"
-        suppressHydrationWarning
-      >
+    <html lang="en" className={`${raleway.variable} ${archivo.variable}`} suppressHydrationWarning>
+      <body className="bg-background text-foreground font-body" suppressHydrationWarning>
         {children}
       </body>
     </html>

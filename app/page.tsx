@@ -19,19 +19,22 @@ const bottomText = " We design experiences that move businesses to the future �
 
 function Hero() {
   return (
-    <section className="relative h-[90vh] md:h-[90vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
-      <h1 className="text-4xl sm:text-5xl md:text-9xl text-white leading-tight sm:leading-tight md:leading-tight">
-        We Build Modern<br></br> Digital Experiences
+    <section className="relative h-full md:h-full flex flex-col px-4 mt-10 lg:mt-28 -mb-4 md:mb-48 lg:mb-24 text-center">
+      <div className="border-primary border-2 rounded-full w-fit px-4 py-0 mb-10 mt-20 mx-auto text-accent flex items-center gap-2 text-sm sm:text-sm uppercase">
+        <span className="text-4xl text-primary">•</span><em>Available for Work</em>
+      </div>
+      <h1 className="text-[160px] md:text-[180px] lg:text-[250px] text-white font-semibold leading-none tracking-wider">
+        AAMIR <br></br>RAZA
       </h1>
-      <p className="my-8 text-lg sm:text-xl text-white max-w-2xl z-10">
-        WebSolution Center specializes in email signatures, websites, SEO, and
-        digital branding that move businesses into the future.
+      <img src="/Web-Designer.png" alt="" className="w-[400px] md:w-[450px] lg:w-[500px] mx-auto md:-mb-52 lg:-mb-80 -mt-32 md:-mt-36 lg:-mt-48" />
+      <p className="my-8 text-lg sm:text-xl text-white max-w-sm z-10 text-left hidden lg:block">
+        I blend artistry with cutting-edge technology to deliver websites that not only look stunning but also drive results.
       </p>
       <Link
         href="/about"
-        className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-5 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
+        className="hidden lg:inline-flex items-center justify-between bg-primary text-secondary rounded-full px-5 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
       >
-        <h1 className="text-xl mr-4 group-hover:translate-x-1 transition">
+        <h1 className="text-xl font-bold mr-4 group-hover:translate-x-1 transition">
           Get Started
         </h1>
         <span className="bg-secondary rounded-full p-2 transition-transform duration-300 group-hover:rotate-45">
@@ -74,10 +77,10 @@ function MainContent() {
   return (
     <>
       {/* Marquee Section */}
-      <section className="w-full mx-auto bg-secondary flex flex-col items-center justify-center py-8 sm:py-10 md:py-12 lg:py-14">
+      <section className="w-full mx-auto bg-primary flex flex-col items-center justify-center py-8 md:py-12 lg:py-14">
         <h1
           ref={topRef}
-          className="w-full overflow-hidden whitespace-nowrap text-3xl font-semibold text-white mb-5 sm:text-6xl md:text-8xl leading-normal md:leading-normal"
+          className="w-full overflow-hidden whitespace-nowrap font-[800] text-secondary mb-6 text-7xl md:text-8xl lg:text-9xl leading-normal md:leading-normal lg:leading-normal"
         >
           <div className="inline-block min-w-full">{topText.repeat(20)}</div>
         </h1>
@@ -106,7 +109,7 @@ function MainContent() {
 
         <h1
           ref={bottomRef}
-          className="w-full overflow-hidden whitespace-nowrap text-3xl font-semibold text-white mt-5 sm:text-6xl md:text-8xl leading-normal md:leading-normal"
+          className="w-full overflow-hidden whitespace-nowrap font-[800] text-secondary mt-6 text-7xl md:text-8xl lg:text-9xl leading-normal md:leading-normal lg:leading-normal"
         >
           <div className="inline-block min-w-full">{bottomText.repeat(20)}</div>
         </h1>
@@ -119,7 +122,7 @@ function MainContent() {
             <p className="text-secondary text-base sm:text-lg text-center md:text-left">
               Hey, nice to meet you! 👋
             </p>
-            <h1 className="text-2xl sm:text-3xl md:text-4xl pt-4 text-secondary md:leading-tight text-center md:text-left">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl pt-4 text-secondary md:leading-tight text-center md:text-left font-bold">
               I am Aamir, a Web Designer based in Multan, Pakistan, working
               globally!
             </h1>
@@ -132,7 +135,7 @@ function MainContent() {
               href="/about"
               className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-5 py-3 w-fit hover:shadow-lg transition group hover:scale-95 mx-auto sm:mx-0 mt-3"
             >
-              <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
+              <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-bold">
                 About me
               </h1>
               <span className="bg-secondary rounded-full p-2 transition-transform duration-300 group-hover:rotate-45">
@@ -158,7 +161,7 @@ export default function Page() {
   return (
     <MainLayout
       hero={<Hero />}
-      bgClass="bg-[url('/herobackground.jpg')] bg-cover bg-center"
+      bgClass="bg-secondary"
     >
       <MainContent />
     </MainLayout>

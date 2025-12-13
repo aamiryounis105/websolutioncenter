@@ -10,6 +10,11 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDark, setIsDark] = useState(false);
 
+  // Scroll states for sticky navbar
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
+
   // Load from localStorage on first render
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
@@ -36,21 +41,55 @@ export default function Navbar() {
     }
   }, [isDark]);
 
+  // Scroll handling for sticky navbar
+  useEffect(() => {
+    const controlNavbar = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 50) {
+        setHasScrolled(true);
+      } else {
+        setHasScrolled(false);
+      }
+
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, [lastScrollY]);
+
   const linkClass = (path: string) =>
     `border-2 px-5 py-3 rounded-3xl hover:bg-white hover:border-white hover:text-secondary transition ${
       pathname === path
-        ? "bg-secondary text-primary border-[var(--secondary)]"
+        ? "bg-primary text-secondary border-[var(--primary)]"
         : "text-white border-white"
     }`;
 
-  const mobileLinkClass = (path: string) =>
-    `hover:text-secondary transition ${
-      pathname === path ? "text-secondary font-semibold" : ""
+  const mobileLinkClass = (href: string) =>
+  `block py-2 px-4 transition-colors duration-200 w-fit border-2 border-secondary rounded-full bg-secondary  ${
+    pathname === href
+      ? "text-accent"
+      : "text-primary hover:text-accent"
     }`;
 
   return (
-    <nav className="text-white dark:text-white z-50 mx-3">
-      <div className="mx-auto px-9 py-2 flex items-center justify-between max-w-8xl">
+    <nav
+  className={`fixed top-0 left-0 w-full z-50 
+    transition-all duration-500 ease-in-out
+    ${isVisible ? "translate-y-0" : "-translate-y-full"} 
+    ${hasScrolled ? "bg-black/70 backdrop-blur-md shadow-md" : "bg-transparent"}
+  `}
+>
+      <div className="mx-auto px-9 py-4 flex items-center justify-between max-w-8xl">
         {/* Logo */}
         <div className="flex-shrink-0">
           <Link href="/">
@@ -59,7 +98,7 @@ export default function Navbar() {
         </div>
 
         {/* Menu */}
-        <div className="hidden md:flex justify-center flex-1">
+        <div className="hidden lg:flex justify-center flex-1">
           <ul className="flex gap-5 text-lg font-medium">
             {[
               { label: "Home", href: "/" },
@@ -78,26 +117,12 @@ export default function Navbar() {
         </div>
 
         {/* Right Buttons */}
-        <div className="hidden md:flex items-center gap-4">
-          {/* Dark Mode Toggle */}
-          <button
-            onClick={() => setIsDark(!isDark)}
-            aria-label="Toggle Dark Mode"
-            className="text-white hover:text-secondary transition"
-          >
-            {isDark ? (
-              <Sun className="w-6 h-6" />
-            ) : (
-              <Moon className="w-6 h-6" />
-            )}
-          </button>
-
-          {/* CTA Button */}
+        <div className="hidden lg:flex items-center gap-4">
           <Link
-            href="/about"
+            href="mailto:aamiryounis105@gmail.com"
             className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
           >
-            <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
+            <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-bold">
               Let&apos;s Meet
             </h1>
             <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
@@ -109,7 +134,7 @@ export default function Navbar() {
         {/* Hamburger Icon */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex flex-col justify-center items-center gap-1 w-8 h-8"
+          className="lg:hidden flex flex-col justify-center items-center gap-1 w-8 h-8"
           aria-label="Toggle menu"
           aria-expanded={isOpen}
         >
@@ -132,47 +157,45 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-500 ease-in-out ${
-          isOpen ? "max-h-96" : "max-h-0"
-        }`}
-      >
-        <ul className="flex flex-col gap-4 text-lg font-medium px-6 pb-6 bg-primary text-background dark:bg-black">
-          {[
-            { label: "Home", href: "/" },
-            { label: "About Me", href: "/about" },
-            { label: "Our Services", href: "/services" },
-            { label: "Our Team", href: "/team" },
-            { label: "Contact Us", href: "/contact" },
-          ].map((item) => (
-            <li key={item.href}>
-              <Link
-                href={item.href}
-                onClick={() => setIsOpen(false)}
-                className={mobileLinkClass(item.href)}
-              >
-                {item.label}
-              </Link>
-            </li>
-          ))}
-          <li>
-            <button
-              onClick={() => {
-                setIsDark(!isDark);
-                setIsOpen(false);
-              }}
-              className="flex items-center gap-2 mt-2"
-            >
-              {isDark ? (
-                <Sun className="w-5 h-5" />
-              ) : (
-                <Moon className="w-5 h-5" />
-              )}
-              <span>{isDark ? "Light Mode" : "Dark Mode"}</span>
-            </button>
-          </li>
-        </ul>
-      </div>
+<div
+  className={`lg:hidden overflow-hidden transition-[max-height] duration-500 ease-in-out ${
+    isOpen ? "max-h-[500px]" : "max-h-0"
+  }`}
+>
+  <ul className="flex flex-col gap-4 text-2xl font-medium px-6 py-6 bg-primary text-secondary dark:bg-black">
+    {[
+      { label: "Home", href: "/" },
+      { label: "About Me", href: "/about" },
+      { label: "Our Services", href: "/services" },
+      { label: "Our Team", href: "/team" },
+      { label: "Contact Us", href: "/contact" },
+    ].map((item) => (
+      <li key={item.href}>
+        <Link
+          href={item.href}
+          onClick={() => setIsOpen(false)}
+          className={mobileLinkClass(item.href)}
+        >
+          {item.label}
+        </Link>
+      </li>
+    ))}
+
+    {/* Mobile CTA Button */}
+    <li className="pt-4">
+      <Link
+            href="mailto:aamiryounis105@gmail.com"
+            className="inline-flex items-center justify-between bg-secondary text-accent rounded-full px-6 py-3 w-fit hover:shadow-lg transition group hover:scale-95">
+            <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-bold">
+              Let&apos;s Meet
+            </h1>
+            <span className="bg-primary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
+              <ArrowUpRight className="w-4 h-4 text-secondary" />
+            </span>
+          </Link>
+    </li>
+  </ul>
+</div>
     </nav>
   );
 }

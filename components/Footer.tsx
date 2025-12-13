@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex justify-center items-center text-center sm:text-start">
           <div>
             <p className="text-primary text-lg">Contact us</p>
-            <h1 className="text-primary text-3xl pt-4 sm:text-4xl">
+            <h1 className="text-primary text-3xl pt-4 sm:text-4xl font-bold">
               Let us create spaces that inspire and elevate your brand!
             </h1>
           </div>
@@ -58,7 +58,7 @@ export default function Footer() {
       </section>
       <section className="flex flex-col justify-center items-center">
         <div className="text-[100px] mt-9 sm:text-[200px] text-center">
-          <h1>SAY HELLO!</h1>
+          <h1 className="font-bold leading-none mb-10">SAY HELLO!</h1>
         </div>
         <div>
           <a href="mailto:aamiryounis105@gmail.com" className="hover:underline">
