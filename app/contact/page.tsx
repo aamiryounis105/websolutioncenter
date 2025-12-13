@@ -35,15 +35,14 @@ function Contact() {
 
       if (res.ok) {
         setStatus("Form submitted successfully!");
-        form.reset(); // ✅ Clear the form
+        form.reset();
       } else {
         setStatus("Failed to send message. Try again.");
       }
-    } catch (err) {
+    } catch {
       setStatus("An error occurred. Try again.");
     }
 
-    // Automatically hide status after 5 seconds
     setTimeout(() => setStatus(""), 5000);
   };
 
@@ -55,7 +54,7 @@ function Contact() {
           <em>Book a call</em>
         </div>
         <h1 className="text-6xl text-accent font-[500]">
-          I'd love to hear from you!
+          I&apos;d love to hear from you!
         </h1>
       </div>
 
