@@ -23,10 +23,10 @@ function Hero() {
       <div className="border-primary border-2 rounded-full w-fit px-4 py-0 mb-10 mt-20 mx-auto text-accent flex items-center gap-2 text-sm sm:text-sm uppercase">
         <span className="text-4xl text-primary">•</span><em>Available for Work</em>
       </div>
-      <h1 className="text-[120px] md:text-[180px] lg:text-[250px] text-white font-semibold leading-none tracking-wider">
+      <h1 className="text-[100px] md:text-[180px] lg:text-[250px] text-white font-semibold leading-none tracking-wider">
         AAMIR <br></br>RAZA
       </h1>
-      <img src="/Web-Designer.png" alt="" className="w-[400px] md:w-[450px] lg:w-[550px] mx-auto md:-mb-52 lg:-mb-80 -mt-48 md:-mt-72 lg:-mt-96" />
+      <img src="/Web-Designer.png" alt="" className="w-[350px] md:w-[450px] lg:w-[550px] mx-auto md:-mb-52 lg:-mb-80 -mt-40 md:-mt-72 lg:-mt-96" />
       <p className="mt-24 mb-5 text-base text-white max-w-[300px] z-10 text-left hidden lg:block">
         I blend artistry with cutting-edge technology to deliver websites that not only look stunning but also drive results.
       </p>

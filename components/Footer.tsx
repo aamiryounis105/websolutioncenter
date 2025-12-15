@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="flex justify-center items-center text-center sm:text-start">
           <div>
             <p className="text-primary text-lg">Contact us</p>
-            <h1 className="text-primary text-3xl pt-4 sm:text-4xl font-bold">
+            <h1 className="text-primary text-2xl pt-4 md:text-4xl font-bold">
               Let us create spaces that inspire and elevate your brand!
             </h1>
           </div>
@@ -62,7 +62,7 @@ export default function Footer() {
         </div>
         <div>
           <a href="mailto:aamiryounis105@gmail.com" className="hover:underline">
-            <h1 className="text-3xl md:text-5xl lg:text-7xl">aamiryounis105@gmail.com</h1>
+            <h1 className="text-2xl md:text-5xl lg:text-7xl">aamiryounis105@gmail.com</h1>
           </a>
         </div>
         <div className="my-6">
@@ -70,8 +70,8 @@ export default function Footer() {
             href="https://wa.me/923098382976"
             className="flex items-center gap-5 hover:underline"
           >
-            <FaWhatsapp className="w-10 h-10 md:w-14 md:h-14" />
-            <h1 className="text-3xl md:text-5xl lg:text-7xl">+92 309 8382976</h1>
+            <FaWhatsapp className="w-8 h-8 md:w-14 md:h-14" />
+            <h1 className="text-2xl md:text-5xl lg:text-7xl">+92 309 8382976</h1>
           </a>
         </div>
         <div className="text-sm mt-9">
