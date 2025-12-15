@@ -57,21 +57,21 @@ export default function Footer() {
         </div>
       </section>
       <section className="flex flex-col justify-center items-center">
-        <div className="text-[100px] mt-9 sm:text-[200px] text-center">
-          <h1 className="font-bold leading-none mb-10">SAY HELLO!</h1>
+        <div className="text-7xl md:text-9xl lg:text-[200px] mt-9 text-center">
+          <h1 className="font-bold leading-none my-10">SAY HELLO!</h1>
         </div>
         <div>
           <a href="mailto:aamiryounis105@gmail.com" className="hover:underline">
-            <h1 className="text-3xl sm:text-5xl">aamiryounis105@gmail.com</h1>
+            <h1 className="text-3xl md:text-5xl lg:text-7xl">aamiryounis105@gmail.com</h1>
           </a>
         </div>
-        <div className="my-10">
+        <div className="my-6">
           <a
             href="https://wa.me/923098382976"
             className="flex items-center gap-5 hover:underline"
           >
-            <FaWhatsapp className="w-10 h-10 sm:w-14 sm:h-14" />
-            <h1 className="text-3xl sm:text-5xl">+92 309 8382976</h1>
+            <FaWhatsapp className="w-10 h-10 md:w-14 md:h-14" />
+            <h1 className="text-3xl md:text-5xl lg:text-7xl">+92 309 8382976</h1>
           </a>
         </div>
         <div className="text-sm mt-9">

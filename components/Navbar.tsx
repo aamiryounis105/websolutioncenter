@@ -86,7 +86,7 @@ export default function Navbar() {
             href="mailto:aamiryounis105@gmail.com"
             className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
           >
-            <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-bold">
+            <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-semibold">
               Let&apos;s Meet
             </h1>
             <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
@@ -98,7 +98,7 @@ export default function Navbar() {
         {/* Hamburger Icon */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden flex flex-col justify-center items-center gap-1 w-8 h-8"
+          className="lg:hidden flex flex-col justify-center items-center gap-1 w-12 h-12 border-2 border-primary rounded-lg p-4 transition hover:bg-white/10"
           aria-label="Toggle menu"
           aria-expanded={isOpen}
         >

@@ -19,15 +19,15 @@ const bottomText = " We design experiences that move businesses to the future âž
 
 function Hero() {
   return (
-    <section className="relative h-full md:h-full flex flex-col px-4 mt-10 lg:mt-28 -mb-4 md:mb-48 lg:mb-24 text-center">
+    <section className="relative h-full md:h-full flex flex-col px-4 mt-10 lg:mt-28 -mb-4 md:mb-48 lg:mb-14 text-center">
       <div className="border-primary border-2 rounded-full w-fit px-4 py-0 mb-10 mt-20 mx-auto text-accent flex items-center gap-2 text-sm sm:text-sm uppercase">
         <span className="text-4xl text-primary">â€¢</span><em>Available for Work</em>
       </div>
-      <h1 className="text-[160px] md:text-[180px] lg:text-[250px] text-white font-semibold leading-none tracking-wider">
+      <h1 className="text-[120px] md:text-[180px] lg:text-[250px] text-white font-semibold leading-none tracking-wider">
         AAMIR <br></br>RAZA
       </h1>
-      <img src="/Web-Designer.png" alt="" className="w-[400px] md:w-[450px] lg:w-[500px] mx-auto md:-mb-52 lg:-mb-80 -mt-32 md:-mt-36 lg:-mt-48" />
-      <p className="my-8 text-lg sm:text-xl text-white max-w-sm z-10 text-left hidden lg:block">
+      <img src="/Web-Designer.png" alt="" className="w-[400px] md:w-[450px] lg:w-[550px] mx-auto md:-mb-52 lg:-mb-80 -mt-48 md:-mt-72 lg:-mt-96" />
+      <p className="mt-24 mb-5 text-base text-white max-w-[300px] z-10 text-left hidden lg:block">
         I blend artistry with cutting-edge technology to deliver websites that not only look stunning but also drive results.
       </p>
       <Link

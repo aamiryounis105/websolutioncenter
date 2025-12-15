@@ -6,7 +6,7 @@ import { useState, type FormEvent } from "react";
 function Hero() {
   return (
     <section className="relative h-[40vh] md:h-[60vh] lg:h-[70vh] flex flex-col items-center justify-center text-center px-4 overflow-hidden">
-      <h1 className="text-8xl md:text-9xl lg:text-[200px] font-bold text-accent tracking-wider pt-24">
+      <h1 className="text-7xl md:text-9xl lg:text-[200px] font-bold text-accent tracking-wider pt-24">
         CONTACT
       </h1>
     </section>
@@ -53,7 +53,7 @@ function Contact() {
           <span className="text-4xl text-primary">•</span>
           <em>Book a call</em>
         </div>
-        <h1 className="text-6xl text-accent font-[500]">
+        <h1 className="text-5xl md:text-6xl text-accent font-[500]">
           I&apos;d love to hear from you!
         </h1>
       </div>
