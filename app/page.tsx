@@ -461,7 +461,7 @@ function TestimonialSection() {
 
 /* ======================= Team Preview ======================= */
 const teamPreview = [
-  { id: 1, name: "Hamza Arain", img: "/team/Hamza.png", title: "Email Signature Designer" },
+  { id: 1, name: "Hamza Arain", img: "/team/hamza.png", title: "Email Signature Designer" },
   { 
     id: 2,
     name: "Aamir Raza",

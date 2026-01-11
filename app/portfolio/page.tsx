@@ -26,9 +26,9 @@ const projects: Record<"websites" | "emailSignatures" | "generators", Project[]>
     { id: 1, type: "generator", title: "Kilamobler Email Signature Generator", img: "/portfolio/kila-mobler-generator.jpg", htmlPath: "https://emailsignatures.online/hubfs/kila-mobler-html-email-signature-generator.html" },
     { id: 2, type: "generator", title: "EasySuper Email Signature Generator", img: "/portfolio/easySuper-generator.jpg", htmlPath: "https://emailsignatures.online/hubfs/easySuper_Email_Signature_Generator.html" },
     { id: 3, type: "generator", title: "Minimalist Email Signature Design", img: "/portfolio/RealizeMg-generator.jpg", htmlPath: "https://emailsignatures.online/hubfs/RealizeMG_Email_Signature_Generator.html" },
-    { id: 4, type: "generator", title: "Lupin-Dental Email Signature Generator", img: "/portfolio/lupin-generator.jpg", htmlPath: "https://emailsignatures.online/hubfs/LupinDental_Editable_Email_Signature_Template.html" },
-    { id: 5, type: "generator", title: "Social Media Post Generator", img: "/portfolio/listd-generator.jpg", htmlPath: "https://emailsignatures.online/hubfs/Listd_Email_Signature-Generator.html" },
-    { id: 6, type: "generator", title: "WilliamStanden Email Signature Generator", img: "/portfolio/ws-generator.jpg", htmlPath: "https://emailsignatures.online/hubfs/WS-Email-Signature-Generator.html" },
+    { id: 4, type: "generator", title: "Lupin Email Signature Generator", img: "/portfolio/lupin-generator.jpg", htmlPath: "https://emailsignatures.online/hubfs/LupinDental_Editable_Email_Signature_Template.html" },
+    { id: 5, type: "generator", title: "List'd Email Signature Generator", img: "/portfolio/listd-generator.jpg", htmlPath: "https://emailsignatures.online/hubfs/Listd_Email_Signature-Generator.html" },
+    { id: 6, type: "generator", title: "WS Email Signature Generator", img: "/portfolio/ws-generator.jpg", htmlPath: "https://emailsignatures.online/hubfs/WS-Email-Signature-Generator.html" },
   ],
 };
 
