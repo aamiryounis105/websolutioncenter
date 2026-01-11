@@ -65,14 +65,14 @@ const letterVariants: Variants = {
           </text>
         </svg>
 
-        <a
+        <Link
           href="/contact"
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <div className="flex items-center justify-center w-44 h-44 rounded-full bg-primary text-secondary hover:scale-105 transition-transform duration-300 hover:rotate-45">
             <ArrowUpRight className="w-20 h-20" />
           </div>
-        </a>
+        </Link>
       </div>
 
       {/* ANIMATED NAME SECTION */}

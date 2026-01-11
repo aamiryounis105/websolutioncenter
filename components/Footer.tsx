@@ -1,5 +1,6 @@
 import { FaWhatsapp } from "react-icons/fa";
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -45,24 +46,31 @@ export default function Footer() {
             </svg>
 
             {/* Center Icon */}
-            <a
+            <Link
               href="/contact"
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
             >
               <div className="flex items-center justify-center w-44 h-44 rounded-full bg-secondary text-primary hover:scale-105 transition-transform duration-300 hover:rotate-45">
                 <ArrowUpRight className="w-20 h-20" />
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
       <section className="flex flex-col justify-center items-center">
         <div className="text-7xl md:text-9xl lg:text-[200px] mt-9 text-center">
-          <h1 className="font-bold my-9 text-accent leading-none md:leading-tight lg:leading-tight tracking-wide">SAY HELLO!</h1>
+          <h1 className="font-bold my-9 text-accent leading-none md:leading-tight lg:leading-tight tracking-wide">
+            SAY HELLO!
+          </h1>
         </div>
         <div>
-          <a href="mailto:aamiryounis105@gmail.com" className="hover:underline text-primary">
-            <h1 className="text-2xl md:text-5xl lg:text-7xl text-primary leading-none md:leading-none lg:leading-tight">aamiryounis105@gmail.com</h1>
+          <a
+            href="mailto:aamiryounis105@gmail.com"
+            className="hover:underline text-primary"
+          >
+            <h1 className="text-2xl md:text-5xl lg:text-7xl text-primary leading-none md:leading-none lg:leading-tight">
+              aamiryounis105@gmail.com
+            </h1>
           </a>
         </div>
         <div className="my-4 md:my-6">
@@ -71,7 +79,9 @@ export default function Footer() {
             className="flex items-center gap-2 md:gap-5 hover:underline text-primary"
           >
             <FaWhatsapp className="w-8 h-8 md:w-14 md:h-14 text-primary" />
-            <h1 className="text-2xl md:text-5xl lg:text-7xl text-primary leading-none md:leading-none lg:leading-none">+92 309 8382976</h1>
+            <h1 className="text-2xl md:text-5xl lg:text-7xl text-primary leading-none md:leading-none lg:leading-none">
+              +92 309 8382976
+            </h1>
           </a>
         </div>
         <div className="text-sm mt-9 text-accent">
