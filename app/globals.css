@@ -3,23 +3,22 @@
 @tailwind utilities;
 
 :root {
-  --font-heading: 'Raleway', sans-serif;
-  --font-body: 'Archivo', sans-serif;
+  --font-heading: var(--font-anton); /* use Boldonse imported from next/font */
+  --font-body: var(--font-archivo);     /* use Archivo imported from next/font */
 
   --background: #ffffff;
   --foreground: #1C202E;
   --primary:    #65e5b5;
   --secondary:  #000000;  
   --accent:     #eeeeee;  
-
 }
 
 .dark {
-  --background: #696969;        /* Deep charcoal */
-  --foreground: #ECEFF4;        /* Soft light gray for readability */
-  --primary: #fff;           /* Light cyan-teal for accents */
-  --secondary: #000;         /* Keep warm peach tone */
-  --accent: #eeeeee;            /* Muted red for call to action */
+  --background: #696969;        
+  --foreground: #ECEFF4;       
+  --primary: #fff;              
+  --secondary: #000;            
+  --accent: #eeeeee;            
 }
 
 body {
@@ -29,5 +28,15 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
+  font-family: var(--font-heading); /* optional tight spacing for condensed look */
+}
+
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
 }

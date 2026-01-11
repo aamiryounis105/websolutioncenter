@@ -1,18 +1,19 @@
-// app/layout.tsx
 import "./globals.css";
 import type { Metadata } from "next";
-import { Raleway, Archivo } from "next/font/google";
+import { Anton, Archivo } from "next/font/google";
 
-const raleway = Raleway({
+const anton = Anton({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700" , "800", "900"],
-  variable: "--font-raleway",
+  weight: ["400"], 
+  variable: "--font-anton",
+  display: "swap",
 });
 
 const archivo = Archivo({
   subsets: ["latin"],
   weight: ["400", "600", "700"],
   variable: "--font-archivo",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -26,8 +27,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${raleway.variable} ${archivo.variable}`} suppressHydrationWarning>
-      <body className="bg-background text-foreground font-body" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${anton.variable} ${archivo.variable}`}
+      suppressHydrationWarning
+    >
+      <body 
+        className="selection:bg-primary selection:text-secondary" 
+        suppressHydrationWarning
+      >
         {children}
       </body>
     </html>
