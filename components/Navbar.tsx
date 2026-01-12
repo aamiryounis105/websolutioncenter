@@ -139,7 +139,7 @@ export default function Navbar() {
           isOpen ? "right-3 translate-x-0" : "right-0 translate-x-full"
         }`}
       >
-        <ul className="flex flex-col gap-4 text-3xl font-heading px-6 py-10 h-full">
+        <ul className="flex flex-col gap-4 text-2xl font-heading px-6 py-10 h-full">
           {[
             { label: "Home", href: "/" },
             { label: "About Me", href: "/about" },
@@ -168,11 +168,11 @@ export default function Navbar() {
                 hover:shadow-lg transition group hover:scale-95
               "
             >
-              <h1 className="text-3xl mr-4 group-hover:translate-x-1 transition">
+              <h1 className="text-2xl mr-4 group-hover:translate-x-1 transition">
                 Email Me
               </h1>
               <span className="bg-primary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
-                <ArrowUpRight className="w-6 h-6 text-secondary" />
+                <ArrowUpRight className="w-4 h-4 text-secondary" />
               </span>
             </Link>
           </li>

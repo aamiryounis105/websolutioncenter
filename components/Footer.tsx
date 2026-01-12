@@ -1,5 +1,12 @@
-import { FaWhatsapp } from "react-icons/fa";
 import { ArrowUpRight } from "lucide-react";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa";
+import { SiFiverr, SiUpwork } from "react-icons/si";
 import Link from "next/link";
 
 export default function Footer() {
@@ -82,6 +89,61 @@ export default function Footer() {
             <h1 className="text-2xl md:text-5xl lg:text-7xl text-primary leading-none md:leading-none lg:leading-none">
               +92 309 8382976
             </h1>
+          </a>
+        </div>
+        <div className="flex items-center gap-3 mt-5 text-accent">
+          {/* Facebook */}
+          <a
+            href="https://facebook.com/aamiryounis105"
+            target="_blank"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <FaFacebookF />
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://instagram.com/aamiryounis105"
+            target="_blank"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <FaInstagram />
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://linkedin.com/in/aamiryounis105"
+            target="_blank"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <FaLinkedinIn />
+          </a>
+
+          {/* X (Twitter) */}
+          <a
+            href="https://x.com/aamiryounis105"
+            target="_blank"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <FaTwitter />
+          </a>
+
+          {/* Fiverr */}
+          <a
+            href="https://fiverr.com/younis105"
+            target="_blank"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <SiFiverr />
+          </a>
+
+          {/* Upwork */}
+          <a
+            href="https://upwork.com/freelancers/aamiryounis105"
+            target="_blank"
+            className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <SiUpwork />
           </a>
         </div>
         <div className="text-sm mt-9 text-accent">

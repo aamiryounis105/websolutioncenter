@@ -44,9 +44,9 @@ const letterVariants: Variants = {
   return (
     <section className="relative flex flex-col items-center text-center pt-40 px-4 bg-secondary overflow-hidden">
       {/* Availability Badge */}
-      <div className="mx-auto w-fit backdrop-blur-xl bg-white/10 border border-white/20 px-6 py-2 rounded-full flex items-center gap-3 text-sm uppercase mb-2 relative z-10">
+      <div className="mx-auto w-fit backdrop-blur-xl bg-white/10 border border-white/20 px-6 py-2 rounded-full flex items-center gap-3 uppercase mb-5 md:mb-2 relative z-10">
         <span className="text-3xl text-primary">•</span>
-        <em className="text-accent">Available for Work</em>
+        <em className="text-accent text-xs md:text-sm">Available for Work</em>
       </div>
 
       {/* Rotating SVG Badge */}
@@ -102,12 +102,13 @@ const letterVariants: Variants = {
   );
 }
 
-/* ======================= MARQUEE SECTION ======================= */
+/* ======================= MARQUEE TEXT ======================= */
 const TOP_TEXT =
   " Custom Websites • WordPress Web Development • Email Signatures • Email Signature Generator •\u00A0";
 const BOTTOM_TEXT =
   " We design experiences that move businesses to the future ➺\u00A0";
 
+/* ======================= PROJECT IMAGES ======================= */
 const teamMembers = [
   { img: "/web-projects/project-1.png" },
   { img: "/web-projects/project-2.jpg" },
@@ -120,24 +121,34 @@ const teamMembers = [
   { img: "/web-projects/project-9.jpg" },
 ];
 
+/* ======================= MARQUEE SECTION ======================= */
 function MarqueeSection() {
   const topRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useAnimationFrame(() => {
+    const width = window.innerWidth;
+
+    // Adjust speed for mobile vs desktop
+    const topSpeed = width < 768 ? 1 : 2;      // top text
+    const trackSpeed = width < 768 ? 0.8 : 1.5; // project track
+    const bottomSpeed = width < 768 ? 1 : 2;   // bottom text
+
     if (topRef.current) {
-      topRef.current.scrollLeft += 2;
+      topRef.current.scrollLeft += topSpeed;
       if (topRef.current.scrollLeft >= topRef.current.scrollWidth / 2)
         topRef.current.scrollLeft = 0;
     }
+
     if (trackRef.current) {
-      trackRef.current.scrollLeft -= 1.5;
+      trackRef.current.scrollLeft -= trackSpeed;
       if (trackRef.current.scrollLeft <= 0)
         trackRef.current.scrollLeft = trackRef.current.scrollWidth / 2;
     }
+
     if (bottomRef.current) {
-      bottomRef.current.scrollLeft += 2;
+      bottomRef.current.scrollLeft += bottomSpeed;
       if (bottomRef.current.scrollLeft >= bottomRef.current.scrollWidth / 2)
         bottomRef.current.scrollLeft = 0;
     }
@@ -145,8 +156,10 @@ function MarqueeSection() {
 
   return (
     <section className="bg-primary py-7 overflow-hidden">
+      {/* Top Text Marquee */}
       <MarqueeRow refProp={topRef} text={TOP_TEXT} />
 
+      {/* Project Images */}
       <div
         ref={trackRef}
         className="w-full overflow-hidden whitespace-nowrap py-7"
@@ -169,11 +182,13 @@ function MarqueeSection() {
         </div>
       </div>
 
+      {/* Bottom Text Marquee */}
       <MarqueeRow refProp={bottomRef} text={BOTTOM_TEXT} />
     </section>
   );
 }
 
+/* ======================= MARQUEE ROW COMPONENT ======================= */
 function MarqueeRow({
   refProp,
   text,
@@ -183,7 +198,7 @@ function MarqueeRow({
 }) {
   return (
     <div ref={refProp} className="w-full overflow-hidden whitespace-nowrap">
-      <div className="inline-flex min-w-max font-heading text-secondary text-6xl md:text-7xl lg:text-8xl leading-normal md:leading-normal lg:leading-normal">
+      <div className="inline-flex min-w-max font-heading text-secondary text-5xl md:text-7xl lg:text-8xl leading-normal md:leading-normal lg:leading-normal">
         <span>{text}</span>
         <span>{text}</span>
       </div>
@@ -410,12 +425,12 @@ function TestimonialSection() {
   return (
     <section className="my-24 px-6 lg:px-16">
       {/* Top Heading */}
-      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-16">
-        <h2 className="text-4xl md:text-6xl max-w-xl leading-tight text-center md:text-left">
+      <div className="flex flex-col lg:flex-row justify-between items-center lg:items-center mb-16">
+        <h2 className="text-4xl md:text-6xl max-w-xl leading-tight text-center lg:text-left">
           Here&apos;s What My Client Has to Say About Me
         </h2>
 
-        <p className="text-secondary text-lg max-w-md mt-6 lg:mt-0 text-center md:text-left">
+        <p className="text-secondary text-lg max-w-md mt-6 lg:mt-0 text-center lg:text-left">
           Discover what our clients have to say about their experience! Real
           stories and genuine feedback from those who trusted us to bring their
           visions to life.
@@ -461,7 +476,7 @@ function TestimonialSection() {
 
 /* ======================= Team Preview ======================= */
 const teamPreview = [
-  { id: 1, name: "Hamza Arain", img: "/team/hamza.png", title: "Email Signature Designer" },
+  { id: 1, name: "Muhammad Hamza", img: "/team/hamza.png", title: "Email Signature Designer" },
   { 
     id: 2,
     name: "Aamir Raza",
@@ -486,7 +501,7 @@ function TeamOverview() {
       </div>
 
       {/* Team Preview Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-5xl mx-auto mb-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 max-w-5xl mx-auto mb-8">
         {teamPreview.map((member) => (
           <div
             key={member.id}

@@ -23,7 +23,7 @@ const teamMembers = [
   },
   {
     id: 2,
-    name: "Hamza Arian",
+    name: "Muhammad Hamza",
     role: "Expert Email Signature Designer",
     img: "/team/hamza.png",
     description:
@@ -179,10 +179,12 @@ function TeamSection() {
 
   return (
     <section className="bg-secondary text-white py-24 px-6 lg:px-20">
-      <h1 className="text-5xl md:text-8xl lg:text-9xl text-accent text-center my-24">
+      <h1 className="text-6xl md:text-8xl lg:text-9xl text-accent text-center mb-5 mt-24">
         MEET OUR TEAM
       </h1>
-
+      <p className="text-sm md:text-lg text-accent text-center mb-24 w-3/4 mx-auto">
+        Our success is a result of teamwork and building upon our technical expertise and creative style providing a full-service solution to our clients.
+      </p>
       {/* Team Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {teamMembers.map((member) => (

@@ -109,7 +109,7 @@ function PortfolioSection() {
 
   return (
     <section className="bg-secondary text-white py-24 px-6 lg:px-20">
-      <h1 className="text-6xl md:text-9xl text-accent my-24 text-center">
+      <h1 className="text-6xl md:text-8xl lg:text-9xl text-accent my-24 text-center">
         MY PORTFOLIO
       </h1>
 

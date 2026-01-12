@@ -1,10 +1,12 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import { Anton, Archivo } from "next/font/google";
+import SmoothScroll from "./SmoothScroll";
+import { MotionWrapper } from "./ClientWrapper"; // <- client component
 
 const anton = Anton({
   subsets: ["latin"],
-  weight: ["400"], 
+  weight: ["400"],
   variable: "--font-anton",
   display: "swap",
 });
@@ -32,11 +34,19 @@ export default function RootLayout({
       className={`${anton.variable} ${archivo.variable}`}
       suppressHydrationWarning
     >
-      <body 
-        className="selection:bg-primary selection:text-secondary" 
+      <body
+        className="selection:bg-primary selection:text-secondary"
         suppressHydrationWarning
       >
-        {children}
+        <SmoothScroll>
+          <MotionWrapper
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {children}
+          </MotionWrapper>
+        </SmoothScroll>
       </body>
     </html>
   );

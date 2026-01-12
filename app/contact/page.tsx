@@ -7,10 +7,13 @@ import { SiFiverr, SiUpwork } from "react-icons/si";
 
 function Hero() {
   return (
-    <section className="relative flex flex-col items-center justify-center text-center px-4 pt-36 md:pt-32 lg:pt-44 h-[40vh] md:h-[50vh] lg:h-[60vh] bg-secondary">
-      <h1 className="text-6xl md:text-8xl lg:text-9xl text-accent tracking-wide">
+    <section className="bg-secondary text-white py-24 px-6 lg:px-20">
+      <h1 className="text-6xl md:text-8xl lg:text-9xl text-accent text-center mt-24 mb-5">
         CONTACT
       </h1>
+      <p className="text-base md:text-lg text-accent text-center w-3/4 mx-auto">
+        Let&apos;s discuss your project and see how I can help.
+      </p>
     </section>
   );
 }
@@ -49,100 +52,98 @@ function Contact() {
   };
 
   return (
-    <section className="flex flex-wrap md:flex-nowrap mx-auto bg-secondary px-10 lg:px-20 py-16 lg:py-24 gap-10">
-<div>
-  <div className="border-primary border-2 rounded-full w-fit px-4 py-0 mb-6 text-accent flex items-center gap-2 text-sm uppercase">
-    <span className="text-4xl text-primary">•</span>
-    <em>Book a call</em>
-  </div>
+    <section className="flex flex-wrap md:flex-nowrap mx-auto bg-secondary px-6 lg:px-20 gap-10 pb-20">
+      <div>
+        <div className="border-primary border-2 rounded-full w-fit px-4 py-0 mb-6 text-accent flex items-center gap-2 text-sm uppercase">
+          <span className="text-4xl text-primary">•</span>
+          <em>Book a call</em>
+        </div>
 
-  <h1 className="text-4xl md:text-6xl text-accent font-[500] mb-10">
-    I&apos;d love to hear from you!
-  </h1>
+        <h1 className="text-4xl md:text-6xl text-accent font-[500] mb-10">
+          I&apos;d love to hear from you!
+        </h1>
 
-  {/* WhatsApp */}
-  <div className="flex items-center gap-2 border-2 border-primary w-fit px-4 py-2 rounded-full hover:bg-primary text-accent hover:text-secondary transition">
-    <FaWhatsapp className="w-6 h-6" />
-    <a
-      href="https://wa.me/+923098382976"
-      target="_blank"
-      className="font-semibold text-lg"
-    >
-      +92 309 8382976
-    </a>
-  </div>
+        {/* WhatsApp */}
+        <div className="flex items-center gap-2 border-2 border-primary w-fit px-4 py-2 rounded-full hover:bg-primary text-accent hover:text-secondary transition">
+          <FaWhatsapp className="w-6 h-6" />
+          <a
+            href="https://wa.me/+923098382976"
+            target="_blank"
+            className="font-semibold text-lg"
+          >
+            +92 309 8382976
+          </a>
+        </div>
 
-  {/* Email */}
-  <div className="flex items-center gap-3 border-2 border-primary w-fit px-4 py-2 rounded-full hover:bg-primary text-accent hover:text-secondary transition mt-4">
-    <FaEnvelope className="w-5 h-5" />
-    <a
-      href="mailto:aamiryounis105@gmail.com"
-      target="_blank"
-      className="font-semibold text-lg"
-    >
-      aamiryounis105@gmail.com
-    </a>
-  </div>
+        {/* Email */}
+        <div className="flex items-center gap-3 border-2 border-primary w-fit px-4 py-2 rounded-full hover:bg-primary text-accent hover:text-secondary transition mt-4">
+          <FaEnvelope className="w-5 h-5" />
+          <a
+            href="mailto:aamiryounis105@gmail.com"
+            target="_blank"
+            className="font-semibold text-lg"
+          >
+            aamiryounis105@gmail.com
+          </a>
+        </div>
 
-  {/* Social Media Links */}
-  <div className="flex items-center gap-3 mt-7 text-accent">
+        {/* Social Media Links */}
+        <div className="flex items-center gap-3 mt-7 text-accent">
+          {/* Facebook */}
+          <a
+            href="https://facebook.com/aamiryounis105"
+            target="_blank"
+            className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <FaFacebookF />
+          </a>
 
-    {/* Facebook */}
-    <a
-      href="https://facebook.com/aamiryounis105"
-      target="_blank"
-      className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
-    >
-      <FaFacebookF />
-    </a>
+          {/* Instagram */}
+          <a
+            href="https://instagram.com/aamiryounis105"
+            target="_blank"
+            className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <FaInstagram />
+          </a>
 
-    {/* Instagram */}
-    <a
-      href="https://instagram.com/aamiryounis105"
-      target="_blank"
-      className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
-    >
-      <FaInstagram />
-    </a>
+          {/* LinkedIn */}
+          <a
+            href="https://linkedin.com/in/aamiryounis105"
+            target="_blank"
+            className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <FaLinkedinIn />
+          </a>
 
-    {/* LinkedIn */}
-    <a
-      href="https://linkedin.com/in/aamiryounis105"
-      target="_blank"
-      className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
-    >
-      <FaLinkedinIn />
-    </a>
+          {/* X (Twitter) */}
+          <a
+            href="https://x.com/aamiryounis105"
+            target="_blank"
+            className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <FaTwitter />
+          </a>
 
-    {/* X (Twitter) */}
-    <a
-      href="https://x.com/aamiryounis105"
-      target="_blank"
-      className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
-    >
-      <FaTwitter />
-    </a>
+          {/* Fiverr */}
+          <a
+            href="https://fiverr.com/younis105"
+            target="_blank"
+            className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <SiFiverr />
+          </a>
 
-    {/* Fiverr */}
-    <a
-      href="https://fiverr.com/younis105"
-      target="_blank"
-      className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
-    >
-      <SiFiverr />
-    </a>
-
-    {/* Upwork */}
-    <a
-      href="https://upwork.com/freelancers/aamiryounis105"
-      target="_blank"
-      className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
-    >
-      <SiUpwork />
-    </a>
-
-  </div>
-</div>
+          {/* Upwork */}
+          <a
+            href="https://upwork.com/freelancers/aamiryounis105"
+            target="_blank"
+            className="w-10 h-10 flex items-center justify-center rounded-full border-2 border-primary hover:bg-primary hover:text-secondary transition"
+          >
+            <SiUpwork />
+          </a>
+        </div>
+      </div>
       <div className="pt-10 md:pt-0">
         <h2 className="text-3xl font-heading text-primary mb-4">Contact Us</h2>
 
@@ -176,7 +177,7 @@ function Contact() {
             className="w-full p-3 border border-secondary bg-background text-foreground rounded h-32 outline-none focus:outline-2 focus:outline-primary"
             required
           ></textarea>
-          
+
           <button
             type="submit"
             className="bg-primary text-secondary px-6 py-3 rounded hover:bg-accent"
@@ -184,9 +185,7 @@ function Contact() {
             Send Message
           </button>
 
-          {status && (
-            <p className="mt-2 text-white font-medium">{status}</p>
-          )}
+          {status && <p className="mt-2 text-white font-medium">{status}</p>}
         </form>
       </div>
     </section>
@@ -228,7 +227,7 @@ function FAQItem({
 
 export function FAQSection() {
   return (
-    <section className="max-w-[90%] mx-auto pt-20 px-6">
+    <section className="mx-auto pt-20 px-6 lg:px-20">
       <p className="text-xl md:text-xl text-secondary text-center mb-5">Your Questions</p>
       <h2 className="text-4xl md:text-5xl text-primary text-center mb-16">
         Frequently Asked Questions
