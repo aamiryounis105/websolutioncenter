@@ -1,7 +1,7 @@
 import "./globals.css";
 import { Anton, Archivo } from "next/font/google";
-import SmoothScroll from "./SmoothScroll";
-import { MotionWrapper } from "./ClientWrapper"; // client component
+import ClientWrapper from "./ClientWrapper"; // client-safe wrapper
+import { ReactNode } from "react";
 
 const anton = Anton({
   subsets: ["latin"],
@@ -17,26 +17,19 @@ const archivo = Archivo({
   display: "swap",
 });
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${anton.variable} ${archivo.variable}`}>
       <head>
-        <meta name="google-site-verification" content="MMf9LpgjUbuVvKC9ONw82PTjcDDFm5bllSTlmN68pfs" />
+        {/* Google verification meta */}
+        <meta
+          name="google-site-verification"
+          content="MMf9LpgjUbuVvKC9ONw82PTjcDDFm5bllSTlmN68pfs"
+        />
       </head>
       <body className="selection:bg-primary selection:text-secondary">
-        <SmoothScroll>
-          <MotionWrapper
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            {children}
-          </MotionWrapper>
-        </SmoothScroll>
+        {/* Hydration-safe client components */}
+        <ClientWrapper>{children}</ClientWrapper>
       </body>
     </html>
   );

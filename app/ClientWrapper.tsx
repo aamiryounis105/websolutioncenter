@@ -1,11 +1,17 @@
-"use client"; // <- this makes it a client component
+"use client";
 
-import { motion, MotionProps } from "framer-motion";
-import React from "react";
+import { ReactNode, useEffect, useState } from "react";
+import SmoothScroll from "./SmoothScroll"; // client component
 
-export const MotionWrapper: React.FC<React.PropsWithChildren<MotionProps>> = ({
-  children,
-  ...props
-}) => {
-  return <motion.div {...props}>{children}</motion.div>;
-};
+export default function ClientWrapper({ children }: { children: ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+
+  // Only render SmoothScroll after hydration
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return <>{children}</>; // fallback during SSR
+
+  return <SmoothScroll>{children}</SmoothScroll>;
+}

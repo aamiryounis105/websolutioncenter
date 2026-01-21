@@ -7,7 +7,6 @@ export default function SEO({
   image = "https://websolutioncenter.com/og/og-home.webp",
   schema,
   twitterHandle = "@aamiryounis105",
-  
 }: {
   title?: string;
   description?: string;
@@ -16,13 +15,12 @@ export default function SEO({
   schema?: any;
   twitterHandle?: string;
 }) {
-  // Default Organization Schema (used globally)
   const defaultOrganizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "WebSolution Center",
     url: "https://websolutioncenter.com",
-    description: description,
+    description,
     logo: "https://websolutioncenter.com/logo.png",
     sameAs: [
       "https://facebook.com/aamiryounis105",
@@ -34,14 +32,20 @@ export default function SEO({
 
   return (
     <Head>
-      {/* BASIC SEO */}
+      {/* Google Verification */}
+      <meta
+        name="google-site-verification"
+        content="MMf9LpgjUbuVvKC9ONw82PTjcDDFm5bllSTlmN68pfs"
+      />
+
+      {/* Basic SEO */}
       <title>{title}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={url} />
       <meta name="viewport" content="width=device-width, initial-scale=1" />
       <meta name="theme-color" content="#0066FF" />
 
-      {/* OPEN GRAPH (Facebook, LinkedIn, etc.) */}
+      {/* Open Graph */}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
@@ -49,7 +53,7 @@ export default function SEO({
       <meta property="og:site_name" content="WebSolution Center" />
       <meta property="og:type" content="website" />
 
-      {/* TWITTER / X */}
+      {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
@@ -57,17 +61,15 @@ export default function SEO({
       <meta name="twitter:site" content={twitterHandle} />
       <meta name="twitter:creator" content={twitterHandle} />
 
-      {/* PAGE-SPECIFIC JSON-LD SCHEMA */}
+      {/* Page-specific schema */}
       {schema && (
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(schema, null, 2),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema, null, 2) }}
         />
       )}
 
-      {/* GLOBAL ORGANIZATION JSON-LD */}
+      {/* Global Organization JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
