@@ -24,6 +24,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${anton.variable} ${archivo.variable}`}>
+      <head>
+        <meta name="google-site-verification" content="MMf9LpgjUbuVvKC9ONw82PTjcDDFm5bllSTlmN68pfs" />
+      </head>
       <body className="selection:bg-primary selection:text-secondary">
         <SmoothScroll>
           <MotionWrapper
