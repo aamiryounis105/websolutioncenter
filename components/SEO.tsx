@@ -1,16 +1,17 @@
 import Head from "next/head";
 
 export default function SEO({
-  title,
-  description,
-  url,
-  image = "https://websolutioncenter.com/og/og-image.webp",
+  title = "WebSolution Center | Websites, Apps & Email Signatures",
+  description = "We build modern websites, mobile apps, HTML email signatures, and custom digital solutions for businesses. High-performance, responsive, and branded solutions tailored to your needs.",
+  url = "https://websolutioncenter.com",
+  image = "https://websolutioncenter.com/og/og-home.webp",
   schema,
   twitterHandle = "@aamiryounis105",
+  
 }: {
-  title: string;
-  description: string;
-  url: string;
+  title?: string;
+  description?: string;
+  url?: string;
   image?: string;
   schema?: any;
   twitterHandle?: string;
@@ -21,6 +22,7 @@ export default function SEO({
     "@type": "Organization",
     name: "WebSolution Center",
     url: "https://websolutioncenter.com",
+    description: description,
     logo: "https://websolutioncenter.com/logo.png",
     sameAs: [
       "https://facebook.com/aamiryounis105",
