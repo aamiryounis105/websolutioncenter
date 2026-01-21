@@ -1,9 +1,9 @@
 "use client";
-
 import { FaWhatsapp, FaEnvelope } from "react-icons/fa";
 import { useState } from "react";
 import MainLayout from "@/components/MainLayout";
 import Image from "next/image";
+import SEO from "@/components/SEO";
 
 // TEAM DATA
 const teamMembers = [
@@ -11,10 +11,11 @@ const teamMembers = [
     id: 1,
     name: "Aamir Raza",
     role: [
-    "Web Developer & Email Signature Specialist",
-    "(Founder - WebSolution Center)"
+      "Web Developer & Email Signature Specialist",
+      "(Founder - WebSolution Center)",
     ],
-    img: "/team/aamir-raza.png",
+    img: "/team/aamir-raza.webp",
+    alt: "Aamir Raza - Web Developer & Email Signature Specialist",
     description:
       "Aamir specializes in building custom-coded websites and modern WordPress solutions tailored for performance and branding. With deep expertise in React, Next.js, Tailwind CSS, and HTML email signature development, he delivers responsive, cross-client-compatible designs. He also creates advanced email signature generators that allow users to update and test signatures live. Aamir leads the team, manages client communication, and ensures every project meets top technical and visual standards.",
     whatsapp: "+923098382976",
@@ -25,7 +26,8 @@ const teamMembers = [
     id: 2,
     name: "Muhammad Hamza",
     role: "Expert Email Signature Designer",
-    img: "/team/hamza.png",
+    img: "/team/hamza.webp",
+    alt: "Muhammad Hamza - Expert Email Signature Designer",
     description:
       "Hamza specializes in designing clean, responsive HTML email signatures tailored for all major email clients, ensuring perfect rendering across Outlook, Gmail, and Apple Mail. He also assists in building email signature generators, helping automate live updates and custom signature creation. Hamza supports Aamir in execution, testing, and polishing every signature to maintain high-quality standards in all client projects.",
     whatsapp: "+923180162584",
@@ -36,7 +38,8 @@ const teamMembers = [
     id: 3,
     name: "Muzammil Hussain",
     role: "Full Stack App Developer",
-    img: "/team/muzammilhussain.png",
+    img: "/team/muzammil.webp",
+    alt: "Muzammil Hussain - Full Stack App Developer",
     description:
       "Muzammil develops high-performance mobile applications for both iOS and Android using Flutter, ensuring fast, scalable, and visually polished user experiences. He also works as a full-stack developer, handling backend integrations, APIs, and database structures with strong reliability. Muzammil collaborates closely with Aamir to build modern app solutions that align with client needs and deliver smooth functionality across all devices.",
     whatsapp: "+923061636105",
@@ -47,7 +50,8 @@ const teamMembers = [
     id: 4,
     name: "Hamzah Naeem",
     role: "Motivational Mentor & Freelance Guide",
-    img: "/team/hamza-n.png",
+    img: "/team/hamzah.webp",
+    alt: "Hamzah Naeem - Motivational Mentor & Freelance Guide",
     description:
       "Hamza serves as a motivational mentor, guiding our young learners and newcomers toward a positive and productive mindset. He helps them understand the value of freelancing, discipline, and continuous learning. By sharing real-world insights and encouragement, he builds their confidence and inspires them to pursue digital skills with purpose.",
     whatsapp: "+923467811143",
@@ -58,10 +62,11 @@ const teamMembers = [
     id: 5,
     name: "Mudassar Hussain",
     role: [
-    "Junior App Development Assistant",
-    "(Learning Full-Stack & Flutter)"
+      "Junior App Development Assistant",
+      "(Learning Full-Stack & Flutter)",
     ],
-    img: "/team/mudassarh.png",
+    img: "/team/mudassar.webp",
+    alt: "Mudassar Hussain - Junior App Development Assistant",
     description:
       "Muddassar is currently learning full-stack and mobile app development under the guidance of Muzammil. He assists in basic tasks such as testing features, organizing app assets, and helping during project builds. His enthusiasm for coding and willingness to learn make him a valuable support member in app-related projects.",
     whatsapp: "+923254797614",
@@ -71,11 +76,9 @@ const teamMembers = [
   {
     id: 6,
     name: "Arman Ali",
-    role: [
-      "Junior Web & Signature Assistant",
-      "(Learning Web Development)"
-    ],
-    img: "/team/Arman-Ali.png",
+    role: ["Junior Web & Signature Assistant", "(Learning Web Development)"],
+    img: "/team/arman-ali.webp",
+    alt: "Arman Ali - Junior Web & Signature Assistant",
     description:
       "Ali is learning modern web development and HTML email signature design, gradually building strong foundational skills. He assists with simple tasks such as content updates, organizing project assets, and performing basic testing across devices. His curiosity and growing confidence make him a supportive part of the workflow during website and signature projects.",
     email: "mohsinzia8839@gmail.com",
@@ -99,7 +102,6 @@ function TeamModal({
   return (
     <div className="fixed inset-0 z-50 bg-black/70 flex items-center justify-center p-4">
       <div className="bg-accent rounded-2xl max-w-lg w-full p-6 relative shadow-xl">
-        
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -111,9 +113,9 @@ function TeamModal({
         {/* Image */}
         <Image
           src={member.img}
-          alt={member.name}
-          width={600}
-          height={400}
+          alt={member.alt}
+          width={150}
+          height={100}
           className="w-32 object-cover rounded-3xl mb-6 pt-2 bg-primary"
         />
 
@@ -123,12 +125,12 @@ function TeamModal({
         <p className="text-secondary font-semibold mb-4 leading-snug">
           {Array.isArray(member.role)
             ? (member.role as string[]).map((line: string, index: number) => (
-              <span key={index}>
-                {line}
-                {index < (member.role as string[]).length - 1 && <br />}
-              </span>
-            ))
-          : member.role}
+                <span key={index}>
+                  {line}
+                  {index < (member.role as string[]).length - 1 && <br />}
+                </span>
+              ))
+            : member.role}
         </p>
 
         {/* Description */}
@@ -138,7 +140,6 @@ function TeamModal({
 
         {/* Contact Section */}
         <div className="flex items-center gap-2 flex-wrap">
-
           {/* WhatsApp */}
           {member.whatsapp && (
             <div className="flex items-center gap-2 bg-secondary w-fit px-4 py-2 rounded-full hover:scale-105 transition hover:bg-primary text-primary hover:text-secondary">
@@ -157,10 +158,7 @@ function TeamModal({
           {member.email && (
             <div className="flex items-center gap-2 bg-secondary w-fit px-4 py-2 rounded-full hover:scale-105 transition hover:bg-primary text-primary hover:text-secondary">
               <FaEnvelope className="w-5 h-5" />
-              <a
-                href={`mailto:${member.email}`}
-                className="font-semibold"
-              >
+              <a href={`mailto:${member.email}`} className="font-semibold">
                 Email
               </a>
             </div>
@@ -183,8 +181,27 @@ function TeamSection() {
         MEET OUR TEAM
       </h1>
       <p className="text-sm md:text-lg text-accent text-center mb-24 w-3/4 mx-auto">
-        Our success is a result of teamwork and building upon our technical expertise and creative style providing a full-service solution to our clients.
+        Our success is a result of teamwork and building upon our technical
+        expertise and creative style providing a full-service solution to our
+        clients.
       </p>
+      <div className="flex flex-col items-center mb-14">
+        {/* Animated down arrow */}
+        <svg
+          className="w-8 h-8 text-primary animate-bounce"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </div>
       {/* Team Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {teamMembers.map((member) => (
@@ -195,7 +212,7 @@ function TeamSection() {
           >
             <Image
               src={member.img}
-              alt={member.name}
+              alt={member.alt}
               width={400}
               height={300}
               className="w-full h-80 object-contain pt-4"
@@ -237,7 +254,9 @@ function TeamSection() {
                 )}
               </div>
               <div className="text-right">
-                  <span className="text-secondary text-sm">➥ Click to view more details</span>
+                <span className="text-secondary text-sm">
+                  ➥ Click to view more details
+                </span>
               </div>
             </div>
           </div>
@@ -246,7 +265,10 @@ function TeamSection() {
 
       {/* Modal */}
       {selectedMember && (
-        <TeamModal member={selectedMember} onClose={() => setSelectedMember(null)} />
+        <TeamModal
+          member={selectedMember}
+          onClose={() => setSelectedMember(null)}
+        />
       )}
     </section>
   );
@@ -268,7 +290,9 @@ function WhyChooseUsSection() {
           <span className="text-5xl mb-4">💡</span>
           <h3 className="text-2xl mb-2">Expertise</h3>
           <p>
-            Our team specializes in custom web development, WordPress solutions, and advanced email signatures, ensuring high-quality and professional output.
+            Our team specializes in custom web development, WordPress solutions,
+            and advanced email signatures, ensuring high-quality and
+            professional output.
           </p>
         </div>
 
@@ -277,7 +301,8 @@ function WhyChooseUsSection() {
           <span className="text-5xl mb-4">🚀</span>
           <h3 className="text-2xl mb-2">Innovation</h3>
           <p>
-            We leverage modern technologies like React, Next.js, Tailwind, and interactive signature generators to create solutions that stand out.
+            We leverage modern technologies like React, Next.js, Tailwind, and
+            interactive signature generators to create solutions that stand out.
           </p>
         </div>
 
@@ -286,7 +311,8 @@ function WhyChooseUsSection() {
           <span className="text-5xl mb-4">🤝</span>
           <h3 className="text-2xl mb-2">Collaboration</h3>
           <p>
-            We work closely with clients, guide newcomers, and ensure smooth project delivery with a balance of expertise and mentorship.
+            We work closely with clients, guide newcomers, and ensure smooth
+            project delivery with a balance of expertise and mentorship.
           </p>
         </div>
       </div>
@@ -300,6 +326,57 @@ function WhyChooseUsSection() {
 export default function Page() {
   return (
     <MainLayout>
+      <SEO
+        title="Our Team | WebSolution Center"
+        description="Meet our expert team of developers, designers, app engineers, and email signature specialists. The people behind WebSolution Center's success."
+        url="https://websolutioncenter.com/team"
+        image="https://websolutioncenter.com/og/og-team.webp"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: "WebSolution Center",
+          url: "https://websolutioncenter.com/team",
+          logo: "https://websolutioncenter.com/logo.png",
+          sameAs: [
+            "https://facebook.com/aamiryounis105",
+            "https://instagram.com/aamiryounis105",
+            "https://x.com/aamiryounis105",
+            "https://linkedin.com/in/aamiryounis105",
+          ],
+          description:
+            "WebSolution Center's professional team includes developers, designers, app engineers, and email signature specialists delivering high-quality digital solutions.",
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": "https://websolutioncenter.com/team",
+          },
+          employee: [
+            {
+              "@type": "Person",
+              name: "Aamir Raza",
+              jobTitle: "Founder & Full Stack Developer",
+              url: "https://websolutioncenter.com/team",
+            },
+            {
+              "@type": "Person",
+              name: "Muhammad Hamza",
+              jobTitle: "Email Signature Designer",
+              url: "https://websolutioncenter.com/team",
+            },
+            {
+              "@type": "Person",
+              name: "Muzammil Hussain",
+              jobTitle: "Full Stack App Developer",
+              url: "https://websolutioncenter.com/team",
+            },
+            {
+              "@type": "Person",
+              name: "Hamzah Naeem",
+              jobTitle: "Motivational Mentor",
+              url: "https://websolutioncenter.com/team",
+            },
+          ],
+        }}
+      />
       <TeamSection />
       <WhyChooseUsSection />
     </MainLayout>

@@ -1,4 +1,9 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { navLinks } from "@/components/navData";
 import {
   FaFacebookF,
   FaInstagram,
@@ -7,11 +12,22 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { SiFiverr, SiUpwork } from "react-icons/si";
-import Link from "next/link";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  const footerLinkClass = (href: string) =>
+    `px-3 py-2 rounded-full transition font-heading
+     ${
+       pathname === href
+         ? "bg-primary text-secondary"
+         : "text-secondary hover:bg-primary hover:text-black"
+     }
+    `;
+
   return (
     <footer className="w-full mx-auto bg-secondary py-10 mt-72 md:mt-60">
+      {/* CONTACT SECTION */}
       <section className="w-[85%] md:w-3/4 bg-primary flex flex-col md:flex-row justify-between items-center mx-auto rounded-3xl px-10 lg:px-20 py-10 gap-6 -mt-64 md:-mt-52">
         <div className="flex justify-center items-center text-center sm:text-start">
           <div>
@@ -21,21 +37,20 @@ export default function Footer() {
             </h1>
           </div>
         </div>
+
+        {/* Circular CTA Button */}
         <div>
           <div className="relative w-[250px] h-[250px] mx-auto scale-75 md:scale-100">
-            <svg
-              viewBox="0 0 250 250"
-              className="w-full h-full animate-spin-slow"
-            >
+            <svg viewBox="0 0 250 250" className="w-full h-full animate-spin-slow">
               <defs>
                 <path
                   id="circlePath"
                   d="
-          M 125, 125
-          m -100, 0
-          a 100,100 0 1,1 200,0
-          a 100,100 0 1,1 -200,0
-        "
+                    M 125, 125
+                    m -100, 0
+                    a 100,100 0 1,1 200,0
+                    a 100,100 0 1,1 -200,0
+                  "
                 />
               </defs>
 
@@ -46,13 +61,12 @@ export default function Footer() {
                 textLength="628"
                 lengthAdjust="spacing"
               >
-                <textPath href="#circlePath" startOffset="0%">
+                <textPath href="#circlePath">
                   GET STARTED NOW - GET STARTED NOW - GET STARTED NOW - &nbsp;
                 </textPath>
               </text>
             </svg>
 
-            {/* Center Icon */}
             <Link
               href="/contact"
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
@@ -64,35 +78,42 @@ export default function Footer() {
           </div>
         </div>
       </section>
+
+      {/* MAIN FOOTER CONTENT */}
       <section className="flex flex-col justify-center items-center">
         <div className="text-7xl md:text-9xl lg:text-[200px] mt-9 text-center">
           <h1 className="font-bold my-9 text-accent leading-none md:leading-tight lg:leading-tight tracking-wide">
             SAY HELLO!
           </h1>
         </div>
+
+        {/* Email */}
         <div>
           <a
             href="mailto:aamiryounis105@gmail.com"
             className="hover:underline text-primary"
           >
-            <h1 className="text-2xl md:text-5xl lg:text-7xl text-primary leading-none md:leading-none lg:leading-tight">
+            <h1 className="text-2xl md:text-5xl lg:text-7xl text-primary">
               aamiryounis105@gmail.com
             </h1>
           </a>
         </div>
+
+        {/* WhatsApp */}
         <div className="my-4 md:my-6">
           <a
             href="https://wa.me/923098382976"
             className="flex items-center gap-2 md:gap-5 hover:underline text-primary"
           >
             <FaWhatsapp className="w-8 h-8 md:w-14 md:h-14 text-primary" />
-            <h1 className="text-2xl md:text-5xl lg:text-7xl text-primary leading-none md:leading-none lg:leading-none">
+            <h1 className="text-2xl md:text-5xl lg:text-7xl text-primary">
               +92 309 8382976
             </h1>
           </a>
         </div>
+
+        {/* Social Icons */}
         <div className="flex items-center gap-3 mt-5 text-accent">
-          {/* Facebook */}
           <a
             href="https://facebook.com/aamiryounis105"
             target="_blank"
@@ -100,8 +121,6 @@ export default function Footer() {
           >
             <FaFacebookF />
           </a>
-
-          {/* Instagram */}
           <a
             href="https://instagram.com/aamiryounis105"
             target="_blank"
@@ -109,8 +128,6 @@ export default function Footer() {
           >
             <FaInstagram />
           </a>
-
-          {/* LinkedIn */}
           <a
             href="https://linkedin.com/in/aamiryounis105"
             target="_blank"
@@ -118,8 +135,6 @@ export default function Footer() {
           >
             <FaLinkedinIn />
           </a>
-
-          {/* X (Twitter) */}
           <a
             href="https://x.com/aamiryounis105"
             target="_blank"
@@ -127,8 +142,6 @@ export default function Footer() {
           >
             <FaTwitter />
           </a>
-
-          {/* Fiverr */}
           <a
             href="https://fiverr.com/younis105"
             target="_blank"
@@ -136,8 +149,6 @@ export default function Footer() {
           >
             <SiFiverr />
           </a>
-
-          {/* Upwork */}
           <a
             href="https://upwork.com/freelancers/aamiryounis105"
             target="_blank"
@@ -146,9 +157,23 @@ export default function Footer() {
             <SiUpwork />
           </a>
         </div>
-        <div className="text-sm mt-9 text-accent">
-          &copy; {new Date().getFullYear()} Web Solution Center. All rights
-          reserved.
+
+        {/* FOOTER MENU */}
+        <div className="mt-9 hidden md:block">
+          <ul className="flex flex-wrap text-xs md:text-sm gap-0 md:gap-1 rounded-full py-3 px-1 bg-accent">
+            {navLinks.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className={footerLinkClass(item.href)}>
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* COPYRIGHT */}
+        <div className="text-sm mt-5 text-accent">
+          &copy; {new Date().getFullYear()} Web Solution Center. All rights reserved.
         </div>
       </section>
     </footer>

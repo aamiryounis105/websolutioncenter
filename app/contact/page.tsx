@@ -1,8 +1,15 @@
 "use client";
-
+import SEO from "@/components/SEO";
 import MainLayout from "@/components/MainLayout";
 import { useState, type FormEvent } from "react";
-import { FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn, FaTwitter, FaWhatsapp } from "react-icons/fa";
+import {
+  FaEnvelope,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedinIn,
+  FaTwitter,
+  FaWhatsapp,
+} from "react-icons/fa";
 import { SiFiverr, SiUpwork } from "react-icons/si";
 
 function Hero() {
@@ -14,6 +21,23 @@ function Hero() {
       <p className="text-base md:text-lg text-accent text-center w-3/4 mx-auto">
         Let&apos;s discuss your project and see how I can help.
       </p>
+      <div className="flex flex-col items-center mt-24">
+        {/* Animated down arrow */}
+        <svg
+          className="w-8 h-8 text-primary animate-bounce"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
+      </div>
     </section>
   );
 }
@@ -28,7 +52,8 @@ function Contact() {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       budget: (form.elements.namedItem("budget") as HTMLInputElement).value,
-      project: (form.elements.namedItem("project") as HTMLTextAreaElement).value,
+      project: (form.elements.namedItem("project") as HTMLTextAreaElement)
+        .value,
     };
 
     try {
@@ -56,7 +81,7 @@ function Contact() {
       <div>
         <div className="border-primary border-2 rounded-full w-fit px-4 py-0 mb-6 text-accent flex items-center gap-2 text-sm uppercase">
           <span className="text-4xl text-primary">•</span>
-          <em>Book a call</em>
+          <em>Get in Touch</em>
         </div>
 
         <h1 className="text-4xl md:text-6xl text-accent font-[500] mb-10">
@@ -192,13 +217,7 @@ function Contact() {
   );
 }
 /* ======================= FAQ SECTION WITH ACCORDION ======================= */
-function FAQItem({
-  question,
-  answer,
-}: {
-  question: string;
-  answer: string;
-}) {
+function FAQItem({ question, answer }: { question: string; answer: string }) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -228,7 +247,9 @@ function FAQItem({
 export function FAQSection() {
   return (
     <section className="mx-auto pt-20 px-6 lg:px-20">
-      <p className="text-xl md:text-xl text-secondary text-center mb-5">Your Questions</p>
+      <p className="text-xl md:text-xl text-secondary text-center mb-5">
+        Your Questions
+      </p>
       <h2 className="text-4xl md:text-5xl text-primary text-center mb-16">
         Frequently Asked Questions
       </h2>
@@ -271,6 +292,39 @@ export function FAQSection() {
 export default function Page() {
   return (
     <MainLayout>
+      <SEO
+        title="Contact Us | WebSolution Center"
+        description="Get in touch with WebSolution Center for website development, app development, HTML email signatures, and signature generators. Our team is ready to help you succeed."
+        url="https://websolutioncenter.com/contact"
+        image="https://websolutioncenter.com/og/og-contact.webp"
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact WebSolution Center",
+          url: "https://websolutioncenter.com/contact",
+          description:
+            "Reach out to WebSolution Center for professional website and app development, HTML email signatures, and signature generators. We're ready to assist with your digital needs.",
+          contactType: "Customer Support",
+          email: "mailto:aamiryounis105@gmail.com",
+          telephone: "+92-309-8382976",
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": "https://websolutioncenter.com/contact",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "WebSolution Center",
+            url: "https://websolutioncenter.com",
+            logo: "https://websolutioncenter.com/logo.png",
+          },
+          sameAs: [
+            "https://facebook.com/aamiryounis105",
+            "https://instagram.com/aamiryounis105",
+            "https://x.com/aamiryounis105",
+            "https://linkedin.com/in/aamiryounis105",
+          ],
+        }}
+      />
       <Hero />
       <Contact />
       <FAQSection />
