@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Anton, Archivo } from "next/font/google";
 import SmoothScroll from "./SmoothScroll";
 import { MotionWrapper } from "./ClientWrapper"; // <- client component
+import Head from "next/head";
 
 const anton = Anton({
   subsets: ["latin"],
@@ -19,8 +20,8 @@ const archivo = Archivo({
 });
 
 export const metadata: Metadata = {
-  title: "Web Solution Center",
-  description: "Modern website with Next.js and Tailwind",
+  title: "WebSolution Center",
+  description: "We build modern websites, apps, HTML email signatures, and custom digital solutions.",
 };
 
 export default function RootLayout({
@@ -34,6 +35,11 @@ export default function RootLayout({
       className={`${anton.variable} ${archivo.variable}`}
       suppressHydrationWarning
     >
+      <Head>
+        {/* Google Site Verification */}
+        <meta name="google-site-verification" content="MMf9LpgjUbuVvKC9ONw82PTjcDDFm5bllSTlmN68pfs" />
+      </Head>
+
       <body
         className="selection:bg-primary selection:text-secondary"
         suppressHydrationWarning
