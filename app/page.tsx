@@ -1,12 +1,6 @@
 "use client";
 import { useEffect, useRef } from "react";
-import {
-  useInView,
-  useAnimationFrame,
-  motion,
-  Variants,
-  animate,
-} from "framer-motion";
+import { useInView, motion, Variants, animate } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -143,7 +137,7 @@ function MarqueeSection() {
     <section className="bg-primary py-16 md:py-20 overflow-hidden">
       {/* Header */}
       <div className="text-center mb-16 px-4">
-        <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 text-secondary">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl mb-6 text-secondary">
           Web Solution Center
         </h1>
         <p className="text-secondary text-lg md:text-xl max-w-4xl mx-auto mt-4">
@@ -294,7 +288,7 @@ function ExperienceSection() {
         </div>
 
         {/* Heading */}
-        <p className="text-center text-accent leading-none text-6xl md:text-8xl lg:text-9xl font-heading">
+        <p className="text-center text-accent leading-none text-5xl md:text-7xl lg:text-8xl font-heading">
           EXPERIENCE
         </p>
 
@@ -452,7 +446,7 @@ function TestimonialSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: t.id * 0.1 }}
-            className="bg-accent rounded-3xl p-8 shadow-lg flex flex-col"
+            className="bg-accent rounded-3xl p-8 shadow-lg flex flex-col hover:bg-primary transition-colors duration-200"
           >
             <FaQuoteLeft className="text-6xl text-secondary mb-4" />
 
@@ -507,11 +501,14 @@ const teamPreview = [
     title: "App Developer",
   },
 ];
+
 function TeamOverview() {
   return (
     <section className="bg-secondary py-16 px-6 lg:px-20">
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-6xl text-accent mb-4">Meet Our Team</h2>
+        <h2 className="text-4xl md:text-6xl text-accent mb-4 font-heading">
+          Meet Our Team
+        </h2>
         <p className="text-lg md:text-xl max-w-3xl mx-auto text-accent">
           Our talented team combines expertise in web development, app
           development, and email signature design.
@@ -524,57 +521,53 @@ function TeamOverview() {
           <div
             key={member.id}
             className={`
-              bg-primary rounded-3xl overflow-hidden shadow-lg flex flex-col items-center justify-end transition
-              ${member.id === 2 ? "lg:scale-110 shadow-2xl z-10" : ""}
+              bg-primary rounded-3xl overflow-hidden shadow-lg flex flex-col items-center justify-end
+              transform transition-all duration-300 hover:scale-105 hover:shadow-2xl
+              ${member.id === 2 ? "lg:scale-110 lg:hover:scale-[1.15] shadow-2xl z-10" : ""}
             `}
           >
+            {/* IMAGE */}
             <Image
               src={member.img}
               alt={member.alt}
-              width={member.id === 2 ? 260 : 200}
-              height={member.id === 2 ? 260 : 200}
-              className={`pt-2 object-contain 
-                ${member.id === 2 ? "w-72 h-72" : "w-72 h-72"}`}
+              width={260}
+              height={260}
+              className="pt-2 object-contain w-72 h-72"
             />
 
+            {/* CARD CONTENT */}
             <div className="bg-accent w-full flex flex-col justify-center items-center py-4">
               <h3
-                className={`text-secondary ${
+                className={`text-secondary font-heading ${
                   member.id === 2 ? "text-3xl" : "text-2xl"
                 }`}
               >
                 {member.name}
               </h3>
 
-              {/* Multi-line title (Aamir) */}
+              {/* Multi-line title (Aamir case) */}
               {Array.isArray(member.title) ? (
                 <div className="flex flex-col items-center mt-1">
-                  {/* First line — with background */}
                   <span
-                    className={`
-                    px-3 py-1 bg-secondary rounded-full text-accent
-                    ${member.id === 2 ? "text-xs" : "text-sm"}
-                  `}
+                    className={`px-3 py-1 bg-secondary rounded-full text-accent ${
+                      member.id === 2 ? "text-xs" : "text-sm"
+                    }`}
                   >
                     {member.title[0]}
                   </span>
-
-                  {/* Second line — no background */}
                   <span
-                    className={`
-                    text-secondary mt-1
-                    ${member.id === 2 ? "text-sm" : "text-xs"}
-                  `}
+                    className={`text-secondary mt-1 ${
+                      member.id === 2 ? "text-sm" : "text-xs"
+                    }`}
                   >
                     {member.title[1]}
                   </span>
                 </div>
               ) : (
                 <span
-                  className={`
-                  mt-1 px-3 py-1 bg-secondary rounded-full text-accent
-                  ${member.id === 2 ? "text-base" : "text-sm"}
-                  `}
+                  className={`mt-1 px-3 py-1 bg-secondary rounded-full text-accent ${
+                    member.id === 2 ? "text-base" : "text-sm"
+                  }`}
                 >
                   {member.title}
                 </span>

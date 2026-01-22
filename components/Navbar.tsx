@@ -101,7 +101,7 @@ export default function Navbar() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="lg:hidden fixed top-6 right-6 flex flex-col justify-center items-center gap-1 
-                   w-12 h-12 bg-primary border-2 rounded-lg p-4 z-[999]"
+                   w-12 h-12 bg-primary border-2 rounded-lg p-4 z-[999] shadow-lg"
         aria-label="Toggle menu"
         aria-expanded={isOpen}
       >
