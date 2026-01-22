@@ -83,12 +83,12 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
             <Link
-              href="mailto:aamiryounis105@gmail.com"
+              href="/contact"
               className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
             >
-              <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
-                Email Me
-              </h1>
+              <span className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-heading">
+                Get Started
+              </span>
               <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight className="w-4 h-4 text-primary" />
               </span>
@@ -154,14 +154,14 @@ export default function Navbar() {
           {/* Mobile CTA */}
           <li className="pt-4">
             <Link
-              href="mailto:aamiryounis105@gmail.com"
+              href="/contact"
               className="inline-flex items-center justify-between 
                          bg-secondary text-primary rounded-full px-5 py-3 w-fit
                          hover:shadow-lg transition group hover:scale-95"
             >
-              <h1 className="text-2xl mr-4 group-hover:translate-x-1 transition">
-                Email Me
-              </h1>
+              <span className="text-2xl mr-4 group-hover:translate-x-1 transition font-heading">
+                Get Started
+              </span>
               <span className="bg-primary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight className="w-4 h-4 text-secondary" />
               </span>

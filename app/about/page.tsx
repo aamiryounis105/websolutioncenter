@@ -31,9 +31,9 @@ function Hero() {
               href="/contact"
               className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
             >
-              <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
+              <span className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-heading">
                 Hire Me
-              </h1>
+              </span>
               <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight className="w-4 h-4 text-primary" />
               </span>
@@ -42,9 +42,9 @@ function Hero() {
               href="/portfolio"
               className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
             >
-              <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
+              <span className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-heading">
                 View Portfolio
-              </h1>
+              </span>
               <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight className="w-4 h-4 text-primary" />
               </span>
@@ -109,9 +109,9 @@ function AboutMe() {
         {/* Right: Content */}
         <div className="bg-accent p-10 pl-10 lg:pl-28 rounded-3xl text-secondary text-center md:text-left">
           {/* Title */}
-          <h1 className="text-4xl md:text-5xl lg:6xl mb-4 leading-tight md:leading-snug lg:leading-tight">
+          <p className="text-4xl md:text-5xl lg:6xl mb-4 leading-tight md:leading-snug lg:leading-tight font-heading">
             Your Partner for High-Converting Websites
-          </h1>
+          </p>
 
           {/* Description */}
           <p className="text-lg leading-relaxed mb-6">
@@ -163,9 +163,9 @@ function AboutMe() {
                 hover:shadow-lg transition group hover:scale-95
               "
             >
-              <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
+              <span className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-heading">
                 Work With Me
-              </h1>
+              </span>
               <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight className="w-4 h-4 text-primary" />
               </span>
@@ -379,9 +379,9 @@ function CTASection() {
                 hover:shadow-lg transition group hover:scale-95
               "
           >
-            <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
+            <span className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-heading">
               Work With Me
-            </h1>
+            </span>
             <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
               <ArrowUpRight className="w-4 h-4 text-primary" />
             </span>

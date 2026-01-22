@@ -84,9 +84,9 @@ function Contact() {
           <em>Get in Touch</em>
         </div>
 
-        <h1 className="text-4xl md:text-6xl text-accent font-[500] mb-10">
+        <p className="text-4xl md:text-6xl text-accent font-[500] mb-10 font-heading">
           I&apos;d love to hear from you!
-        </h1>
+        </p>
 
         {/* WhatsApp */}
         <div className="flex items-center gap-2 border-2 border-primary w-fit px-4 py-2 rounded-full hover:bg-primary text-accent hover:text-secondary transition">

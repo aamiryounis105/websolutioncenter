@@ -280,9 +280,9 @@ function TeamSection() {
 function WhyChooseUsSection() {
   return (
     <section className="text-secondary pt-24 pb-14 px-6 lg:px-20">
-      <h1 className="text-4xl md:text-6xl text-secondary text-center mb-16">
+      <p className="text-4xl md:text-6xl text-secondary text-center mb-16 font-heading">
         Why Work With Us
-      </h1>
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Item 1 */}

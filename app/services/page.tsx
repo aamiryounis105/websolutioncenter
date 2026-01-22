@@ -156,9 +156,9 @@ function Services() {
             href="/portfolio"
             className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
           >
-            <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
+            <span className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-heading">
               View Our Portfolio
-            </h1>
+            </span>
             <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
               <ArrowUpRight className="w-4 h-4 text-primary" />
             </span>
@@ -244,9 +244,9 @@ function WebPricingSection() {
   return (
     <section className="py-24 px-6 lg:px-20">
       <div className="max-w-7xl mx-auto text-center mb-12">
-        <h1 className="text-4xl md:text-6xl text-secondary">
+        <p className="text-4xl md:text-6xl text-secondary font-heading">
           Choose the Perfect Plan
-        </h1>
+        </p>
         <p className="mt-4 text-xl text-secondary">
           Scalable pricing for every stage of your business.
         </p>
@@ -254,7 +254,7 @@ function WebPricingSection() {
       <hr className="border-t-8 border-primary w-1/4 mx-auto rounded-lg" />
 
       <div className="text-center mt-20 mb-16">
-        <h1 className="text-4xl md:text-5xl leading-tight">Website Packages</h1>
+        <p className="text-4xl md:text-5xl leading-tight font-heading">Website Packages</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -277,9 +277,9 @@ function WebPricingSection() {
               href="/contact"
               className="inline-flex items-center justify-between bg-secondary text-primary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95 mb-8"
             >
-              <h1 className="text-base sm:text-lg mr-4 group-hover:translate-x-1 transition">
+              <span className="text-base sm:text-lg mr-4 group-hover:translate-x-1 transition font-heading">
                 Get Started
-              </h1>
+              </span>
               <span className="bg-primary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight className="w-3 h-3 text-secondary" />
               </span>
@@ -366,9 +366,9 @@ function MobPricingSection() {
   return (
     <section className="mb-24 px-6 lg:px-20">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl leading-tight">
+        <p className="text-4xl md:text-5xl leading-tight font-heading">
           Mobile App Packages
-        </h1>
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -391,9 +391,9 @@ function MobPricingSection() {
               href="/contact"
               className="inline-flex items-center justify-between bg-secondary text-primary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95 mb-8"
             >
-              <h1 className="text-base sm:text-lg mr-4 group-hover:translate-x-1 transition">
+              <span className="text-base sm:text-lg mr-4 group-hover:translate-x-1 transition font-heading">
                 Get Started
-              </h1>
+              </span>
               <span className="bg-primary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight className="w-3 h-3 text-secondary" />
               </span>
@@ -473,9 +473,9 @@ function SignaturePricingSection() {
   return (
     <section className="px-6 lg:px-20">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl leading-tight">
+        <p className="text-4xl md:text-5xl leading-tight font-heading">
           Email Signature Packages
-        </h1>
+        </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -498,9 +498,9 @@ function SignaturePricingSection() {
               href="/contact"
               className="inline-flex items-center justify-between bg-secondary text-primary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95 mb-8"
             >
-              <h1 className="text-base sm:text-lg mr-4 group-hover:translate-x-1 transition">
+              <span className="text-base sm:text-lg mr-4 group-hover:translate-x-1 transition font-heading">
                 Get Started
-              </h1>
+              </span>
               <span className="bg-primary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight className="w-3 h-3 text-secondary" />
               </span>
@@ -538,9 +538,9 @@ function NextSection() {
         href="/contact"
         className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
       >
-        <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
+        <span className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-heading">
           Contact Us
-        </h1>
+        </span>
         <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
           <ArrowUpRight className="w-4 h-4 text-primary" />
         </span>

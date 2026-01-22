@@ -87,11 +87,11 @@ function HeroSection() {
       </div>
 
       {/* ANIMATED NAME SECTION */}
-      <motion.h1
+      <motion.span
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="flex leading-none tracking-wider text-[130px] md:text-[250px] lg:text-[400px] pt-40 md:pt-40 lg:pt-60 text-white font-bold"
+        className="flex leading-none tracking-wider text-[130px] md:text-[250px] lg:text-[400px] pt-40 md:pt-40 lg:pt-60 text-white font-bold font-heading"
       >
         {name.split("").map((char, index) => (
           <motion.span
@@ -102,7 +102,7 @@ function HeroSection() {
             {char}
           </motion.span>
         ))}
-      </motion.h1>
+      </motion.span>
 
       {/* Hero Image */}
       <Image
@@ -140,11 +140,11 @@ const projects = [
 /* ======================= SECTION ======================= */
 function MarqueeSection() {
   return (
-    <section className="bg-primary py-12 md:py-20 overflow-hidden">
+    <section className="bg-primary py-16 md:py-20 overflow-hidden">
       {/* Header */}
       <div className="text-center mb-16 px-4">
-        <h1 className="text-secondary text-4xl sm:text-5xl md:text-7xl leading-tight md:leading-tight">
-          Building Modern Digital Experiences
+        <h1 className="text-5xl md:text-7xl lg:text-8xl mb-6 text-secondary">
+          Web Solution Center
         </h1>
         <p className="text-secondary text-lg md:text-xl max-w-4xl mx-auto mt-4">
           We build modern websites, high-performance mobile apps, and polished
@@ -180,9 +180,9 @@ function MarqueeSection() {
           href="/services"
           className="inline-flex items-center justify-between bg-secondary text-primary rounded-full px-5 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
         >
-          <h1 className="text-lg sm:text-2xl mr-4 group-hover:translate-x-1 transition">
+          <span className="text-lg sm:text-2xl mr-4 group-hover:translate-x-1 transition font-heading">
             Explore Our Services
-          </h1>
+          </span>
           <span className="bg-primary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
             <ArrowUpRight className="w-5 h-5 text-secondary" />
           </span>
@@ -228,9 +228,9 @@ function AboutSection() {
             href="/about"
             className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
           >
-            <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
+            <span className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-heading">
               About Me
-            </h1>
+            </span>
             <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
               <ArrowUpRight className="w-4 h-4 text-primary" />
             </span>
@@ -294,9 +294,9 @@ function ExperienceSection() {
         </div>
 
         {/* Heading */}
-        <h1 className="text-center text-accent leading-none text-6xl md:text-8xl lg:text-9xl">
+        <p className="text-center text-accent leading-none text-6xl md:text-8xl lg:text-9xl font-heading">
           EXPERIENCE
-        </h1>
+        </p>
 
         {/* PLATFORM CARDS (ANIMATION REMOVED) */}
         <div className="mt-14 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -469,7 +469,7 @@ function TestimonialSection() {
                 className="rounded-full w-12 h-12 object-cover"
               />
               <div>
-                <h1 className="text-secondary text-lg">{t.name}</h1>
+                <p className="text-secondary text-lg font-heading">{t.name}</p>
                 <p className="text-secondary text-xs">{t.role}</p>
               </div>
             </div>
@@ -590,9 +590,9 @@ function TeamOverview() {
           href="/team"
           className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
         >
-          <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
+          <span className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-heading">
             View Our Team
-          </h1>
+          </span>
           <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
             <ArrowUpRight className="w-4 h-4 text-primary" />
           </span>
@@ -619,9 +619,9 @@ function CTASection() {
           href="/contact"
           className="inline-flex items-center justify-between bg-primary text-secondary rounded-full px-4 py-3 w-fit hover:shadow-lg transition group hover:scale-95"
         >
-          <h1 className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition">
+          <span className="text-lg sm:text-xl mr-4 group-hover:translate-x-1 transition font-heading">
             Contact Us
-          </h1>
+          </span>
           <span className="bg-secondary rounded-full p-1.5 transition-transform duration-300 group-hover:rotate-45">
             <ArrowUpRight className="w-4 h-4 text-primary" />
           </span>
